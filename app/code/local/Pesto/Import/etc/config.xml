@@ -1,0 +1,31 @@
+<config>
+    <modules>
+        <Pesto_Import>
+            <version>0.1.0</version>
+        </Pesto_Import>
+    </modules>
+
+    <global>
+        <helpers>
+            <pesto_import>
+                <class>Pesto_Import_Helper</class>
+            </pesto_import>
+        </helpers>
+
+        <models>
+            <pesto_import>
+                <class>Pesto_Import_Model</class>
+            </pesto_import>
+        </models>
+    </global>
+
+    <!--<default>-->
+        <!--<pesto_import>-->
+            <!--<settings_senator>-->
+                <!--<ftp_url></ftp_url>-->
+                <!--<ftp_login></ftp_login>-->
+                <!--<ftp_password></ftp_password>-->
+            <!--</settings_senator>-->
+        <!--</pesto_import>-->
+    <!--</default>-->
+</config>
