@@ -1,45 +1,56 @@
 <config>
     <modules>
-        <Pest_Core>
+        <Pesto_Core>
             <version>0.1.0</version>
-        </Pest_Core>
+        </Pesto_Core>
     </modules>
     <global>
         <helpers>
-            <pest_core>
-                <class>Pest_Core_Helper</class>
-            </pest_core>
+            <pesto_core>
+                <class>Pesto_Core_Helper</class>
+            </pesto_core>
         </helpers>
 
         <blocks>
-            <pest_core>
-                <class>Pest_Core_Block</class>
-            </pest_core>
+            <pesto_core>
+                <class>Pesto_Core_Block</class>
+            </pesto_core>
         </blocks>
 
         <models>
-            <pest_core>
-                <class>Pest_Core_Model</class>
-            </pest_core>
+            <pesto_core>
+                <class>Pesto_Core_Model</class>
+            </pesto_core>
         </models>
     </global>
 
     <frontend>
-        <layout>
-            <updates>
-                <bestart_core>
-                    <file>bestart.xml</file>
-                </bestart_core>
-            </updates>
-        </layout>
-        <translate>
-            <modules>
-                <bestart_core>
-                    <files>
-                        <default>BestArt_Core.csv</default>
-                    </files>
-                </bestart_core>
-            </modules>
-        </translate>
+        <routers>
+            <pesto>
+                <use>standard</use>
+                <args>
+                    <module>Pesto_Core</module>
+                    <frontName>pesto</frontName>
+                </args>
+            </pesto>
+        </routers>
+
+        <!--<layout>-->
+            <!--<updates>-->
+                <!--<pesto_core>-->
+                    <!--<file>pesto.xml</file>-->
+                <!--</pesto_core>-->
+            <!--</updates>-->
+        <!--</layout>-->
+        <!---->
+        <!--<translate>-->
+            <!--<modules>-->
+                <!--<pesto_core>-->
+                    <!--<files>-->
+                        <!--<default>Pesto.csv</default>-->
+                    <!--</files>-->
+                <!--</pesto_core>-->
+            <!--</modules>-->
+        <!--</translate>-->
     </frontend>
 </config>

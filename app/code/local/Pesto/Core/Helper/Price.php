@@ -1,6 +1,12 @@
 <?php
+/**
+ * File: Price.php
+ * Date: 28.05.15 - 13:18
+ *
+ * @author pest (pest11s@gmail.com)
+ */
 
-class BestArt_Core_Helper_Price extends Mage_Core_Helper_Abstract {
+class Pesto_Core_Helper_Price extends Mage_Core_Helper_Abstract {
 
 	/*
 	 * Output product price with set number of decimals,

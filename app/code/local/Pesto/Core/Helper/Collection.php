@@ -1,10 +1,11 @@
 <?php
 /**
- * User: Serega
- * Date: 30.04.13
- * Time: 16:48
+ * File: Collection.php
+ * Date: 28.05.15 - 13:14
+ *
+ * @author pest (pest11s@gmail.com)
  */
-class BestArt_Core_Helper_Collection extends Mage_Core_Helper_Abstract {
+class Pesto_Core_Helper_Collection extends Mage_Core_Helper_Abstract {
 
     /**
      *  Вернуть кол-во из коллекции

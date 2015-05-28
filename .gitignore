@@ -1,0 +1,10 @@
+downloader
+errors
+includes
+lib
+media
+pkginfo
+shell
+var
+.idea
+app/etc/local.xml

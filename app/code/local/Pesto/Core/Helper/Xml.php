@@ -1,14 +1,12 @@
 <?php
 /**
  * File: Xml.php
- * Date: 21.03.13 - 11:12
+ * Date: 28.05.15 - 13:12
  *
- * @company BestArtDesign
- * @site http://bestartdesign.com
  * @author pest (pest11s@gmail.com)
  */
 
-class BestArt_Core_Helper_Xml extends Mage_Core_Helper_Abstract {
+class Pesto_Core_Helper_Xml extends Mage_Core_Helper_Abstract {
 
     /**
      * Получение данных в виде ассоциативного массива из XML файла

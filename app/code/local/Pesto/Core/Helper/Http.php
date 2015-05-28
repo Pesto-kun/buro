@@ -1,14 +1,12 @@
 <?php
 /**
  * File: Http.php
- * Date: 26.03.13 - 14:29
+ * Date: 28.05.15 - 13:13
  *
- * @company BestArtDesign
- * @site http://bestartdesign.com
  * @author pest (pest11s@gmail.com)
  */
 
-class BestArt_Core_Helper_Http extends Mana_Core_Helper_Data {
+class Pesto_Core_Helper_Http extends Mage_Core_Helper_Data {
 
     /**
      * check site status

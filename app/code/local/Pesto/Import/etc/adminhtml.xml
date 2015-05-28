@@ -7,9 +7,9 @@
                         <children>
                             <config>
                                 <children>
-                                    <doubleprice translate="title">
-                                        <title>Double Price</title>
-                                    </doubleprice>
+                                    <pesto_import translate="title">
+                                        <title>Import</title>
+                                    </pesto_import>
                                 </children>
                             </config>
                         </children>

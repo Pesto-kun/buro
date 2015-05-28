@@ -1,14 +1,12 @@
 <?php
 /**
  * File: File.php
- * Date: 28.03.13 - 15:08
+ * Date: 28.05.15 - 13:14
  *
- * @company BestArtDesign
- * @site http://bestartdesign.com
  * @author pest (pest11s@gmail.com)
  */
 
-class BestArt_Core_Helper_File extends Mage_Core_Helper_Abstract {
+class Pesto_Core_Helper_File extends Mage_Core_Helper_Abstract {
 
     /**
      * Создание директории

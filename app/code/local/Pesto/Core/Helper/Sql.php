@@ -1,14 +1,12 @@
 <?php
 /**
  * File: Sql.php
- * Date: 14.05.13 - 10:10
+ * Date: 28.05.15 - 13:13
  *
- * @company BestArtDesign
- * @site http://bestartdesign.com
  * @author pest (pest11s@gmail.com)
  */
 
-class BestArt_Core_Helper_Sql extends Mage_Core_Helper_Abstract {
+class Pesto_Core_Helper_Sql extends Mage_Core_Helper_Abstract {
 
     protected $_connection;
 

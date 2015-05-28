@@ -1,9 +1,51 @@
 <?xml version="1.0"?>
 <config>
-    <tabs>
-        <pesto_tab>
-            <label>Pesto</label>
-            <sort_order>1000</sort_order>
-        </pesto_tab>
-    </tabs>
+    <sections>
+        <pesto_import translate="label">
+            <label>Import</label>
+            <tab>pesto_tab</tab>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <senator translate="label">
+                    <label>Senator</label>
+                    <sort_order>10</sort_order>
+                    <expanded>0</expanded>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <ftp_url translate="label comment">
+                            <label>FTP url</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ftp_url>
+
+                        <ftp_login translate="label comment">
+                            <label>FTP login</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ftp_login>
+
+                        <ftp_password translate="label comment">
+                            <label>FTP password</label>
+                            <frontend_type>password</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ftp_password>
+                    </fields>
+                </senator>
+            </groups>
+        </pesto_import>
+    </sections>
 </config>

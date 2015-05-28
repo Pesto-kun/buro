@@ -1,10 +1,11 @@
 <?php
 /**
- * User: serega
- * Date: 01.03.13
- * Time: 10:07
+ * File: Data.php
+ * Date: 28.05.15 - 13:15
+ *
+ * @author pest (pest11s@gmail.com)
  */
-class BestArt_Core_Helper_Data extends Mage_Core_Helper_Abstract {
+class Pesto_Core_Helper_Data extends Mage_Core_Helper_Abstract {
 
     protected $_randStr = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
@@ -68,64 +69,45 @@ class BestArt_Core_Helper_Data extends Mage_Core_Helper_Abstract {
         return $return;
     }
 
-    protected function _getPluralEn($number)
-    {
-        if ($number > 1)
-            return 'Products';
+    /*
+    * Get the lowest price of products in store
+    */
+    public function getMinProductPrice() {
+        // Get the current store id
+        $storeId = Mage::app()
+            ->getStore()
+            ->getId();
+        // Get a reference to the Product model
+        $product = Mage::getModel('catalog/product')
+            ->setStoreId($storeId)
+            ->getCollection()
+            ->addAttributeToSelect('price')
+            ->setPageSize(1)
+            ->addAttributeToSort("price", "ASC")
+            ->load();
 
-        return 'Product';
+        return number_format($product->getFirstItem()
+            ->getPrice(), 2, '.', '');
     }
 
-    protected function _getPluralRu($number)
-    {
-        if ($number % 100 > 10 AND $number % 100 < 14)
-        {
-            return 'Товаров';
-        }
+    /*
+    * Get the lowest price of products in store
+    */
+    public function getMaxProductPrice() {
+        // Get the current store id
+        $storeId = Mage::app()
+            ->getStore()
+            ->getId();
+        // Get a reference to the Product model
+        $product = Mage::getModel('catalog/product')
+            ->setStoreId($storeId)
+            ->getCollection()
+            ->addAttributeToSelect('price')
+            ->setPageSize(1)
+            ->addAttributeToSort("price", "DESC")
+            ->load();
 
-        switch ($number % 10)
-        {
-            case 1:
-                return 'Товар';
-            case 2:
-            case 3:
-            case 4:
-                return 'Товара';
-            default:
-                return 'Товаров';
-        }
-    }
-
-    /** Склонение слова "товар" в зависимости от кол-ва
-     * @param $number
-     * @param Mage_Core_Model_Locale $locale
-     * @return string
-     */
-    public function getPluralProducts($number, Mage_Core_Model_Locale $locale)
-    {
-        $result = '';
-        switch($locale->getLocaleCode()) {
-            case 'en_EN':
-            case 'en_US':
-            case 'us_US':
-                $result = $this->_getPluralEn($number);
-                break;
-
-            default: $result = $this->_getPluralRu($number);
-        }
-
-        return $result;
-    }
-
-    public function getMiniCartProductsHtml()
-    {
-        $qty = Mage::helper('checkout/cart')->getItemsQty();
-        $plural = $this->getPluralProducts($qty, Mage::app()->getLocale());
-        return $this->_getPluralHtml($qty, $plural);
-    }
-
-    protected function _getPluralHtml($qty, $plural)
-    {
-        return '<span>'.$qty.'</span> '.$plural;
+        return number_format($product->getFirstItem()
+            ->getPrice(), 2, '.', '');
     }
 }

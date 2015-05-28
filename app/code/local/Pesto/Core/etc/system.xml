@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
     <tabs>
-        <pest_tab>
-            <label>Pest</label>
+        <pesto_tab>
+            <label>Pesto</label>
             <sort_order>1000</sort_order>
-        </pest_tab>
+        </pesto_tab>
     </tabs>
 </config>
