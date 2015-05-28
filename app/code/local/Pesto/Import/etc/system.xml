@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <pesto_tab>
+            <label>Pesto</label>
+            <sort_order>1000</sort_order>
+        </pesto_tab>
+    </tabs>
+</config>
