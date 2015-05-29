@@ -12,8 +12,11 @@ class Pesto_Core_Helper_File extends Mage_Core_Helper_Abstract {
      * Создание директории
      *
      * @param $path
+     * @param int $mode
+     *
+     * @throws Mage_Core_Exception
      */
-    public function createDir($path) {
+    public function createDir($path, $mode = 0755) {
 
         //Проверка существования директории
         if(!file_exists($path)) {
@@ -21,7 +24,7 @@ class Pesto_Core_Helper_File extends Mage_Core_Helper_Abstract {
             try {
 
                 //Создаем директорию, если не существует
-                mkdir($path, 0755, TRUE);
+                mkdir($path, $mode, TRUE);
 
             } catch(Exception $e) {
                 Mage::throwException($e->getMessage());
