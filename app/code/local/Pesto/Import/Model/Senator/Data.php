@@ -3,12 +3,7 @@
  * @author pest (pest11s@gmail.com) 
  */
 
-class Pesto_Import_Model_Senator extends Pesto_Import_Model_Ftp {
-
-    protected $_goods = 'positions.xls';
-    protected $_attributes = 'types_names.xls';
-    protected $_attributesValue = 'types_values.xls';
-    protected $_attributesData = 'types_values_assign.xls';
+class Pesto_Import_Model_Senator_Data extends Pesto_Import_Model_Ftp {
 
     public function __construct() {
         parent::__construct();

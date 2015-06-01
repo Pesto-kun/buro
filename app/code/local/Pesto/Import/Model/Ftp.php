@@ -129,4 +129,22 @@ class Pesto_Import_Model_Ftp extends Mage_Core_Model_Abstract {
             throw new Exception('Невозможно получить файл с FTP');
         }
     }
+
+    public function getRequiredFileNames() {
+        return array();
+    }
+
+    /**
+     * Получение необходимых файлов с сервера
+     *
+     * @return $this
+     * @throws Exception
+     */
+    protected function _getFiles() {
+        foreach($this->getRequiredFileNames() as $_file) {
+            $this->ftpConnect();
+            $this->getFile($_file);
+        }
+        return $this;
+    }
 }
