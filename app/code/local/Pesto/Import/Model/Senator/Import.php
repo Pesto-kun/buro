@@ -3,7 +3,7 @@
  * @author pest (pest11s@gmail.com) 
  */
 
-use SimpleExcel\SimpleExcel;
+//use SimpleExcel\SimpleExcel;
 
 class Pesto_Import_Model_Senator_Import extends Pesto_Import_Model_Senator_Data {
 
@@ -25,7 +25,7 @@ class Pesto_Import_Model_Senator_Import extends Pesto_Import_Model_Senator_Data 
 
         try {
             //Получаем файлы с данными
-            $this->_getFiles();
+//            $this->_getFiles();
 
             //Парсим файлы
             $this->_parseFiles();
@@ -38,6 +38,7 @@ class Pesto_Import_Model_Senator_Import extends Pesto_Import_Model_Senator_Data 
         } catch(Exception $e) {
 
             //Обработка ошибки
+            echo '<pre style="text-align:left;background-color:white;">'.print_r($e->getMessage(),1).'</pre>';
             Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
             Mage::helper('pesto_core/notify')->addNotify('Ошибка импорта продуктов Senator', $e->getMessage(), '', 'major');
 
@@ -51,7 +52,6 @@ class Pesto_Import_Model_Senator_Import extends Pesto_Import_Model_Senator_Data 
     protected function _parseFiles() {
 
 //        //Подключаем файл для работы с Excel
-//        include_once Mage::getModuleDir('', 'pesto_import') . '/include/SimpleExcel/SimpleExcel.php';
 
         //Типы полей
         //TODO тут забить хардкодом
@@ -66,15 +66,23 @@ class Pesto_Import_Model_Senator_Import extends Pesto_Import_Model_Senator_Data 
 
     }
 
+    protected function _parseAttributes() {
+
+    }
+
     protected function _parseAttributesValues() {
+
+//        include_once Mage::getModuleDir('', 'Pesto_Import') . '/include/SimpleExcel/SimpleExcel.php';
+//        require_once '../../include/SimpleExcel/SimpleExcel.php';
 
         //Локальный файл
         $filePath = $this->getLocalFilePath($this->_attributes);
 
-        $excel = new SimpleExcel('CSV');
-        /** @var $parser \SimpleExcel\Parser\CSVParser */
-        $parser = $excel->parser;
-        $parser->loadFile($filePath);
-
+//        $excel = new \SimpleExcel\SimpleExcel('CSV');
+//        $excel = new SimpleExcel();
+//        /** @var $parser \SimpleExcel\Parser\CSVParser */
+//        $parser = $excel->parser;
+//        $parser->loadFile($filePath);
+//        $a = 'test';
     }
 }
