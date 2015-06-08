@@ -73,21 +73,8 @@ class Pesto_Import_Model_Senator_Import extends Pesto_Import_Model_Senator_Data 
 
     protected function _parseAttributesValues() {
 
-//        require_once(Mage::getModuleDir('', 'Pesto_Import') . '/include/SimpleExcel/SimpleExcel.php');
-//        require_once('/home/pest/web/buro-reklamy.my/app/code/local/Pesto/Import/include/SimpleExcel/SimpleExcel.php');
-//        require_once '../../include/SimpleExcel/SimpleExcel.php';
-
         //Локальный файл
         $filePath = $this->getLocalFilePath($this->_attributes);
 
-        $includePath = Mage::getBaseDir(). "/lib/SimpleExcel";
-        set_include_path(get_include_path() . PS . $includePath);
-
-//        $excel = new \SimpleExcel\SimpleExcel('CSV');
-        $excel = new SimpleExcel();
-        /** @var $parser \SimpleExcel\Parser\CSVParser */
-        $parser = $excel->parser;
-        $parser->loadFile($filePath);
-//        $a = 'test';
     }
 }
