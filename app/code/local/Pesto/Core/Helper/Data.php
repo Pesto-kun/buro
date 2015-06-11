@@ -110,4 +110,17 @@ class Pesto_Core_Helper_Data extends Mage_Core_Helper_Abstract {
         return number_format($product->getFirstItem()
             ->getPrice(), 2, '.', '');
     }
+
+    /**
+     * Подключение библиотеки для парсинга
+     */
+    public function includeSimpleHtmlDom() {
+
+        try {
+            require_once(Mage::getBaseDir('code') . DS . 'local/BestArt/Core/include/simple_html_dom.php');
+        } catch (Exception $e) {
+            Mage::getSingleton('adminhtml/session')->addError($this->__('Unable to include parse library.'));
+        }
+
+    }
 }
